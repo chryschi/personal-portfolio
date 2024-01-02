@@ -12,9 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --small-triangle-size: 100px;
-  --medium-triangle-size: 160px;
-  --large-triangle-size: 220px;
+  --small-triangle-size: 170px;
+  --medium-triangle-size: 240px;
+  --large-triangle-size: 300px;
 }
 
 a {
@@ -31,7 +31,12 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
 }
 
 h1 {

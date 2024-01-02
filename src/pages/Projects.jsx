@@ -12,6 +12,8 @@ const Projects = () => {
         <div className="triangle position-six medium-up"></div>
         <div className="triangle position-seven small-down"></div>
         <div className="triangle position-eight medium-up"></div>
+        <div className="triangle position-seven small-down"></div>
+        <div className="triangle position-eight medium-up"></div>
       </div>
     </>
   );

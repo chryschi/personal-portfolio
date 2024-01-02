@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
-      <div className="header-logo">Abigail Chrystal Major</div>
+    <>
+      <header>
+        <div className="logo-container">
+          <div className="logo">Abigail Chrystal Major</div>
+          <p>Web Development</p>
+        </div>
+      </header>
       <nav>
         <ul>
           <li>
@@ -17,7 +22,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </>
   );
 };
 
