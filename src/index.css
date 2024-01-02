@@ -1,7 +1,21 @@
+@font-face {
+  font-family: SofiaSans;
+  src: url(./assets/SofiaSans-Light.ttf);
+}
+@font-face {
+  font-family: SplineSans;
+  src: url(./assets/SplineSans-SemiBold.ttf);
+}
+@font-face {
+  font-family: SquadaOne;
+  src: url(./assets/SquadaOne-Regular.ttf);
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: SofiaSans, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

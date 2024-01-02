@@ -20,21 +20,25 @@
 }
 
 .logo {
-  font-size: 70px;
+  font-family: SquadaOne;
+  font-size: 4rem;
 }
 
 .logo-container p {
-  font-size: 30px;
+  font-family: SplineSans;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
 
 nav {
   position: sticky;
   top: 0;
   z-index: 9;
-  font-size: 20px;
-  text-transform: lowercase;
   padding: 10px;
   background-color: yellow;
+
+  font-size: 1rem;
+  text-transform: lowercase;
 }
 
 nav ul {
