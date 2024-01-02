@@ -1,5 +1,5 @@
 const Projects = () => {
-  return <main>Explore my projects!</main>;
+  return <>Explore my projects!</>;
 };
 
 export default Projects;

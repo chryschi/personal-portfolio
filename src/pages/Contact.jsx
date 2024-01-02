@@ -1,5 +1,5 @@
 const Contact = () => {
-  return <main> Looking forward to your message!</main>;
+  return <> Looking forward to your message!</>;
 };
 
 export default Contact;
