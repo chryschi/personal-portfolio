@@ -40,3 +40,83 @@
 .read-the-docs {
   color: #888;
 }
+
+/* border width relations for equilateral triangle: border-bottom = 1.73 * border-right and border-right = border-left */
+
+.triangle {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.small-up {
+  border-left: var(--small-triangle-size) solid transparent;
+  border-right: var(--small-triangle-size) solid transparent;
+  border-bottom: calc(1.73 * var(--small-triangle-size)) solid yellow;
+}
+
+.small-down {
+  border-left: var(--small-triangle-size) solid transparent;
+  border-right: var(--small-triangle-size) solid transparent;
+  border-top: calc(1.73 * var(--small-triangle-size)) solid violet;
+}
+
+.medium-up {
+  border-left: var(--medium-triangle-size) solid transparent;
+  border-right: var(--medium-triangle-size) solid transparent;
+  border-bottom: calc(1.73 * var(--medium-triangle-size)) solid red;
+}
+
+.medium-down {
+  border-left: var(--medium-triangle-size) solid transparent;
+  border-right: var(--medium-triangle-size) solid transparent;
+  border-top: calc(1.73 * var(--medium-triangle-size)) solid green;
+}
+
+.large-up {
+  border-left: var(--large-triangle-size) solid transparent;
+  border-right: var(--large-triangle-size) solid transparent;
+  border-bottom: calc(1.73 * var(--large-triangle-size)) solid blue;
+}
+
+.large-down {
+  border-left: var(--large-triangle-size) solid transparent;
+  border-right: var(--large-triangle-size) solid transparent;
+  border-top: calc(1.73 * var(--large-triangle-size)) solid orange;
+}
+
+.position-one {
+  top: 20px;
+}
+
+/* .position-two {
+  left: 200px;
+} */
+
+.position-three {
+  top: 40px;
+}
+
+.position-four {
+  top: 50px;
+}
+
+.position-five {
+  top: -80px;
+  left: -150px;
+}
+
+.position-six {
+  top: 80px;
+  left: -200px;
+}
+
+.position-seven {
+  top: 100px;
+  left: -150px;
+}
+
+.project-triangle-container {
+  display: flex;
+  flex-wrap: wrap;
+}
