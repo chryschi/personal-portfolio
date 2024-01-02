@@ -45,6 +45,42 @@ nav ul {
   list-style: none;
 }
 
+nav a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  color: var(--nav-text-color);
+  text-decoration: none;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0.9em;
+  left: -10%;
+  width: 120%;
+  height: 0.1em;
+  background-color: hotpink;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 300ms;
+}
+
+nav a:hover::after,
+nav a:focus::after,
+nav a:active::after {
+  transform: scale(1);
+}
+
+nav a:focus::after {
+  z-index: -10;
+}
+
+nav a:active::after {
+  mix-blend-mode: exclusion;
+}
+
 /* main content */
 
 .triangle {

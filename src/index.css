@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --nav-text-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,15 +16,6 @@
   --small-triangle-size: 170px;
   --medium-triangle-size: 240px;
   --large-triangle-size: 300px;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -67,9 +59,6 @@ button:focus-visible {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;
