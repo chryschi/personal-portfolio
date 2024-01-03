@@ -177,6 +177,33 @@ main {
   justify-content: center;
 }
 
+.about-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.profile-photo {
+  align-self: center;
+}
+/* .about-triangle-container {
+
+} */
+
+.about-position-one {
+  top: 1.8rem;
+  right: 2rem;
+}
+.about-position-two {
+  left: 7rem;
+  bottom: 4rem;
+}
+.about-position-three {
+  bottom: 6rem;
+  right: 7rem;
+}
+
 .contact {
   z-index: -4;
 }

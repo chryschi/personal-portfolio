@@ -5,7 +5,7 @@ const Contact = () => {
         <div className="triangle medium-down contact"></div>
         <div className="contact-triangle">
           <p>
-            Looking forward to <br /> your message!
+            I&apos;m looking forward to <br /> your message!
           </p>
           <div className="button-container">
             <button>
