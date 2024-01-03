@@ -232,10 +232,12 @@ main {
   height: 200%;
   background-color: hotpink;
   transform: translateX(-100%);
+
   transition: transform 0.4s ease;
 }
 
-.contact-triangle button:hover::before {
+.contact-triangle button:hover::before,
+.contact-triangle button:focus::before {
   transform: translateX(0%);
 }
 
@@ -249,4 +251,9 @@ main {
   top: -0.1em;
   border-radius: 8px;
   background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.contact-triangle button:active::after {
+  background-color: hotpink;
 }
