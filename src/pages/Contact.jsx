@@ -8,7 +8,9 @@ const Contact = () => {
             Looking forward to <br /> your message!
           </p>
           <div className="button-container">
-            <button>Contact Me</button>
+            <button>
+              <a href="mailto:abigail.c.major@web.de">Contact Me</a>
+            </button>
           </div>
         </div>
       </div>
