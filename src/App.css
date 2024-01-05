@@ -227,11 +227,11 @@ main {
 
 .profile-photo {
   align-self: center;
+  background-color: burlywood;
 }
 
 .about-triangle-container {
   height: 100%;
-  width: 100%;
 }
 
 .about-triangle {
@@ -241,64 +241,37 @@ main {
   position: relative;
 }
 
-.first-triangle {
+.about-first-triangle {
   position: relative;
   top: 0em;
+  background-color: greenyellow;
 }
 
-.first-triangle::before {
-  display: flex;
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: var(--small-triangle-size) solid transparent;
-  border-right: var(--small-triangle-size) solid transparent;
-  border-top: calc(1.73 * var(--small-triangle-size)) solid red;
-}
-
-.first-triangle > div {
+.about-first-triangle > div {
   position: absolute;
   top: 2.6em;
 }
 
-.second-triangle {
+.about-second-triangle {
   position: relative;
   left: 12em;
   bottom: 4em;
+  background-color: orangered;
 }
 
-.second-triangle::before {
-  display: flex;
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: var(--small-triangle-size) solid transparent;
-  border-right: var(--small-triangle-size) solid transparent;
-  border-bottom: calc(1.73 * var(--small-triangle-size)) solid red;
-}
-
-.second-triangle > div {
+.about-second-triangle > div {
   position: absolute;
   bottom: 1.2em;
 }
 
-.third-triangle {
+.about-third-triangle {
   position: relative;
   right: 5em;
   bottom: 6em;
+  background-color: palevioletred;
 }
 
-.third-triangle::before {
-  display: flex;
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: var(--small-triangle-size) solid transparent;
-  border-right: var(--small-triangle-size) solid transparent;
-  border-bottom: calc(1.73 * var(--small-triangle-size)) solid red;
-}
-
-.third-triangle > div {
+.about-third-triangle > div {
   position: absolute;
   bottom: 1em;
 }

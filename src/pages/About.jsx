@@ -2,9 +2,9 @@ const About = () => {
   return (
     <>
       <div className="about-container">
-        <div className="triangle profile-photo medium-down"></div>
+        <div className="profile-photo triangle-medium triangle-down"></div>
         <div className="about-triangle-container">
-          <div className="about-triangle first-triangle">
+          <div className="about-triangle about-first-triangle triangle-small triangle-down ">
             <div>
               <p>Hi! I&apos;m Abi.</p>
               <p>
@@ -15,7 +15,7 @@ const About = () => {
             </div>
           </div>
           {/* <div className="triangle about-position-one small-down"></div> */}
-          <div className="about-triangle second-triangle">
+          <div className="about-triangle about-second-triangle triangle-small triangle-up">
             <div>
               During my physics <br />
               studies I came in <br />
@@ -25,7 +25,7 @@ const About = () => {
               also with web <br /> development
             </div>
           </div>
-          <div className="about-triangle third-triangle">
+          <div className="about-triangle about-third-triangle triangle-small triangle-up ">
             <div>
               I love creating and <br />
               building new things <br />
