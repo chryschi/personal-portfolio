@@ -91,9 +91,29 @@ nav a:active::after {
   z-index: 5;
   width: 0;
   height: 0;
+  animation-name: levitation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* transform: scale(1);
+  transition: transform 0.2s ease-in-out; */
 }
 
-/* border width relations for equilateral triangle: border-bottom = 1.73 * border-right and border-right = border-left */
+.triangle:hover {
+  animation-play-state: paused;
+}
+
+@keyframes levitation {
+  0% {
+    transform: scale(1) translate3d(0em, 0em, 0em);
+  }
+  50% {
+    transform: scale(1.05) translate3d(-0.4em, -0.4em, 0em);
+  }
+  100% {
+    transform: scale(1) translate3d(0em, 0em, 0em);
+  }
+}
 
 .project-triangle-container {
   display: flex;
@@ -110,76 +130,86 @@ nav a:active::after {
   justify-content: center;
 }
 
+.triangle-up {
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.triangle-down {
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.triangle-xs {
+  width: var(--xs-triangle-width);
+  height: calc(0.87 * var(--xs-triangle-width));
+}
+
+.triangle-small {
+  width: var(--small-triangle-width);
+  height: calc(0.87 * var(--small-triangle-width));
+}
+
+.triangle-medium {
+  width: var(--medium-triangle-width);
+  height: calc(0.87 * var(--medium-triangle-width));
+}
+
+.triangle-large {
+  width: var(--large-triangle-width);
+  height: calc(0.87 * var(--large-triangle-width));
+}
+
+/* border width relations for equilateral triangle: border-bottom = 1.73 * border-right and border-right = border-left */
+
 .position-one {
   top: 2rem;
   left: 8rem;
+  background-color: green;
+  animation-delay: -1s;
+  /* transform: scale(0.5); */
 }
 
 .position-two {
   left: 10rem;
+  background-color: blue;
+  animation-delay: -0.5s;
 }
 
 .position-three {
   top: 5rem;
+  background-color: pink;
+  animation-delay: -2s;
 }
 
 .position-four {
   top: 2.4rem;
   right: 9rem;
+  background-color: red;
+  animation-delay: -2.5s;
 }
 
 .position-five {
   top: -8rem;
   left: -3rem;
+  background-color: orange;
+  animation-delay: -1.5s;
 }
 
 .position-six {
   top: 4rem;
   left: -10rem;
+  background-color: teal;
+  animation-delay: -0.5s;
 }
 
 .position-seven {
   top: 6rem;
   left: -7rem;
+  background-color: burlywood;
 }
 .position-eight {
   left: -3rem;
-}
-
-.small-up {
-  border-left: var(--small-triangle-size) solid transparent;
-  border-right: var(--small-triangle-size) solid transparent;
-  border-bottom: calc(1.73 * var(--small-triangle-size)) solid yellow;
-}
-
-.small-down {
-  border-left: var(--small-triangle-size) solid transparent;
-  border-right: var(--small-triangle-size) solid transparent;
-  border-top: calc(1.73 * var(--small-triangle-size)) solid violet;
-}
-
-.medium-up {
-  border-left: var(--medium-triangle-size) solid transparent;
-  border-right: var(--medium-triangle-size) solid transparent;
-  border-bottom: calc(1.73 * var(--medium-triangle-size)) solid red;
-}
-
-.medium-down {
-  border-left: var(--medium-triangle-size) solid transparent;
-  border-right: var(--medium-triangle-size) solid transparent;
-  border-top: calc(1.73 * var(--medium-triangle-size)) solid green;
-}
-
-.xs-up {
-  border-left: var(--xs-triangle-size) solid transparent;
-  border-right: var(--xs-triangle-size) solid transparent;
-  border-bottom: calc(1.73 * var(--xs-triangle-size)) solid blue;
-}
-
-.xs-down {
-  border-left: var(--xs-triangle-size) solid transparent;
-  border-right: var(--xs-triangle-size) solid transparent;
-  border-top: calc(1.73 * var(--xs-triangle-size)) solid orange;
+  background-color: darkmagenta;
+  animation-delay: -2s;
 }
 
 main {
