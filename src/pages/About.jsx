@@ -4,9 +4,38 @@ const About = () => {
       <div className="about-container">
         <div className="triangle profile-photo medium-down"></div>
         <div className="about-triangle-container">
-          <div className="triangle about-position-one small-down"></div>
-          <div className="triangle about-position-two small-up"></div>
-          <div className="triangle about-position-three small-up"></div>
+          <div className="about-triangle first-triangle">
+            <div>
+              <p>Hi! I&apos;m Abi.</p>
+              <p>
+                I have a degree in physics <br />
+                and a passion for <br />
+                music, art and <br /> code.
+              </p>
+            </div>
+          </div>
+          {/* <div className="triangle about-position-one small-down"></div> */}
+          <div className="about-triangle second-triangle">
+            <div>
+              During my physics <br />
+              studies I came in <br />
+              touch with <br />
+              programming and
+              <br />
+              also with web <br /> development
+            </div>
+          </div>
+          <div className="about-triangle third-triangle">
+            <div>
+              I love creating and <br />
+              building new things <br />
+              combined with <br />
+              expressing myself <br />
+              through colors, <br />
+              shapes and <br />
+              sound.
+            </div>
+          </div>
         </div>
       </div>
     </>

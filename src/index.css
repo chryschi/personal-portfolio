@@ -27,9 +27,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --small-triangle-size: 170px;
-  --medium-triangle-size: 240px;
-  --large-triangle-size: 300px;
+  --small-triangle-size: 11rem;
+  --medium-triangle-size: 15rem;
+  --large-triangle-size: 20rem;
 }
 
 body {
