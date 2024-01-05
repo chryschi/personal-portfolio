@@ -27,6 +27,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --xs-triangle-size: 7rem;
   --small-triangle-size: 11rem;
   --medium-triangle-size: 15rem;
   --large-triangle-size: 20rem;
