@@ -86,6 +86,12 @@ nav a:active::after {
 
 /* main content */
 
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
 .triangle {
   position: relative;
   z-index: 5;
@@ -212,11 +218,6 @@ nav a:active::after {
   animation-delay: -2s;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-}
-
 .about-container {
   display: flex;
   justify-content: center;
@@ -276,25 +277,27 @@ main {
   bottom: 1em;
 }
 
-.contact {
-  z-index: -4;
-}
-
 .contact-container {
   position: relative;
   top: 5vh;
   width: calc(2 * var(--medium-triangle-size));
-  height: calc(1.73 * var(--medium-triangle-size));
+  height: calc(0.86 * var(--medium-triangle-width));
+}
+
+.contact {
+  position: relative;
+  background-color: olivedrab;
 }
 
 .contact-triangle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  gap: 1rem;
+  position: absolute;
   z-index: 8;
-  bottom: calc(1.73 * var(--medium-triangle-size) * 0.9);
-  height: 100%;
+  top: 4rem;
+  height: 25%;
   width: 100%;
 }
 
@@ -303,10 +306,9 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: -9;
+  z-index: 0;
   background: orange;
-  /* margin-top: calc(0.1 * var(--medium-triangle-size)); */
-  height: 10%;
+  height: 100%;
   width: 35%;
   border-radius: 12px;
   overflow: hidden;
@@ -331,7 +333,6 @@ main {
   height: 200%;
   background-color: hotpink;
   transform: translateX(-100%);
-
   transition: transform 0.4s ease;
 }
 
@@ -355,4 +356,28 @@ main {
 
 .contact-triangle button:active::after {
   background-color: hotpink;
+}
+
+.contact-triangle p {
+  animation-name: tilt-n-move-shaking;
+  animation-iteration-count: infinite;
+  animation-duration: 0.9s;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(3deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
