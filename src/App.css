@@ -83,16 +83,6 @@ nav a:active::after {
   mix-blend-mode: exclusion;
 }
 
-header,
-nav {
-  filter: grayscale(0%);
-  transition: filter 0.5s ease;
-}
-
-.grayscale {
-  filter: grayscale(100%);
-}
-
 /* main content */
 
 main {
@@ -111,6 +101,13 @@ main {
   100% {
     transform: scale(1) translate3d(0em, 0em, 0em);
   }
+}
+
+.projects-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rosybrown;
 }
 
 .project-triangle-container {
@@ -223,6 +220,22 @@ main {
   left: -3rem;
   background-color: darkmagenta;
   animation-delay: -2s;
+}
+
+header,
+nav,
+.projects-background,
+.project-triangle {
+  filter: grayscale(0%);
+  transition: filter 1s ease;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.remove-grayscale {
+  filter: grayscale(0%);
 }
 
 .about-container {

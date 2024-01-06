@@ -1,64 +1,45 @@
 import "../App.css";
 import { useContext } from "react";
 import { AppContext } from "../App";
+import ProjectTriangle from "../components/ProjectTriangle";
 
 const Projects = () => {
-  const { setGrayscale } = useContext(AppContext);
+  const { grayscale } = useContext(AppContext);
 
-  const showSurrounding = () => {
-    setGrayscale(false);
-  };
+  const firstRow = [
+    "triangle-small position-two triangle-down project-triangle",
+    "triangle-medium position-three triangle-up project-triangle",
+    "triangle-small position-four triangle-down project-triangle",
+  ];
 
-  const pronounceTriangle = () => {
-    setGrayscale(true);
-  };
+  const secondRow = [
+    "triangle-medium position-five triangle-down project-triangle",
+    "triangle-small position-six triangle-up project-triangle",
+    "triangle-xs position-seven triangle-down project-triangle",
+    "triangle-small position-eight triangle-up project-triangle",
+  ];
 
   return (
     <>
+      <div
+        className={"projects-background" + (grayscale ? " grayscale" : "")}
+      ></div>
       <div className="project-triangle-container">
         <div className="project-row row-one">
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-xs position-one triangle-up"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-small position-two triangle-down"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-medium position-three triangle-up"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-small position-four triangle-down"
-          ></div>
+          {firstRow.map((triangle, idx) => (
+            <ProjectTriangle
+              key={idx}
+              className={triangle + (grayscale ? " grayscale" : "")}
+            />
+          ))}
         </div>
         <div className="project-row row-two">
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-medium position-five triangle-down"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-small position-six triangle-up"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-xs position-seven triangle-down"
-          ></div>
-          <div
-            onMouseEnter={pronounceTriangle}
-            onMouseLeave={showSurrounding}
-            className="triangle-small position-eight triangle-up"
-          ></div>
+          {secondRow.map((triangle, idx) => (
+            <ProjectTriangle
+              key={firstRow.length + idx}
+              className={triangle + (grayscale ? " grayscale" : "")}
+            />
+          ))}
         </div>
       </div>
     </>
