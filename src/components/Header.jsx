@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../App";
 
 const Header = () => {
+  const { grayscale } = useContext(AppContext);
+
   return (
     <>
-      <header>
+      <header className={grayscale ? "grayscale" : ""}>
         <div className="logo-container">
           <div className="logo">Abigail Chrystal Major</div>
           <p>Web Development</p>
         </div>
       </header>
-      <nav>
+      <nav className={grayscale ? "grayscale" : ""}>
         <ul>
           <li>
             <Link to={"/"}>Projects</Link>

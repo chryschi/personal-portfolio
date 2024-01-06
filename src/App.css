@@ -2,7 +2,6 @@
   text-align: center;
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
 }
@@ -84,21 +83,22 @@ nav a:active::after {
   mix-blend-mode: exclusion;
 }
 
+header,
+nav {
+  filter: grayscale(0%);
+  transition: filter 0.5s ease;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
 /* main content */
 
 main {
   display: flex;
   justify-content: center;
   flex: 1;
-}
-
-.triangle {
-  position: relative;
-  z-index: 5;
-  width: 0;
-  height: 0;
-  /* transform: scale(1);
-  transition: transform 0.2s ease-in-out; */
 }
 
 @keyframes levitation {
@@ -122,6 +122,10 @@ main {
   width: 100%;
   padding: 30px;
 }
+
+/* body .project-row > div:not(:hover) {
+  filter: grayscale(100%);
+} */
 
 .project-row {
   display: flex;
