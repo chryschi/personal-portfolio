@@ -97,16 +97,8 @@ main {
   z-index: 5;
   width: 0;
   height: 0;
-  animation-name: levitation;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
   /* transform: scale(1);
   transition: transform 0.2s ease-in-out; */
-}
-
-.triangle:hover {
-  animation-play-state: paused;
 }
 
 @keyframes levitation {
@@ -134,6 +126,17 @@ main {
 .project-row {
   display: flex;
   justify-content: center;
+}
+
+.project-row > div {
+  animation-name: levitation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.project-row > div:hover {
+  animation-play-state: paused;
 }
 
 .triangle-up {
@@ -307,11 +310,11 @@ main {
   align-items: center;
   position: relative;
   z-index: 0;
-  background: orange;
-  height: 100%;
+  /* background: orange; */
+  flex: 1;
   width: 35%;
   border-radius: 12px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .contact-triangle button {
@@ -319,42 +322,38 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 6;
-  height: calc(100% - 0.6em);
-  width: calc(100% - 0.8em);
-  background-color: red;
-}
-
-.contact-triangle button::before {
-  content: "";
-  position: absolute;
-  z-index: -3;
-  width: 120%;
-  height: 200%;
-  background-color: hotpink;
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
-}
-
-.contact-triangle button:hover::before,
-.contact-triangle button:focus::before {
-  transform: translateX(0%);
+  padding: 0.2em 0.6em;
+  background-color: white;
+  background-repeat: no-repeat;
+  transform-style: preserve-3d;
 }
 
 .contact-triangle button::after {
   content: "";
   position: absolute;
-  z-index: -2;
-  width: calc(100% + 0.4em);
-  height: calc(100% + 0.2em);
-  left: -0.2em;
-  top: -0.1em;
-  border-radius: 8px;
-  background-color: white;
-  transition: background-color 0.2s ease;
+  border-radius: 12px;
+  background-image: linear-gradient(hotpink, hotpink),
+    linear-gradient(orange, orange);
+  background-size: 0% 100%, 100% 100%;
+  background-position: 0% 100%, 100% 0;
+  background-repeat: no-repeat, no-repeat;
+  width: calc(100% + 0.6em);
+  height: calc(100% + 0.6em);
+  transform: translate3d(0%, 0, -1em);
+  transition: background-size 1s ease;
+}
+
+.contact-triangle button:hover::after,
+.contact-triangle button:focus::after {
+  background-size: 100% 100%, 0 100%;
+}
+
+.contact-triangle button:active {
+  background-color: hotpink;
 }
 
 .contact-triangle button:active::after {
+  transition: none;
   background-color: hotpink;
 }
 
