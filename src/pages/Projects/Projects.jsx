@@ -2,6 +2,7 @@ import "./Projects.css";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 import ProjectTriangle from "../../components/ProjectTriangle";
+import imgCVBuilder from "../../assets/projects_screenshots/cv-builder-screenshot.png";
 
 const Projects = () => {
   const { grayscale } = useContext(AppContext);
@@ -13,6 +14,7 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
     {
       classes:
@@ -20,13 +22,15 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
     {
       classes:
         "triangle-medium position-three triangle-up project-triangle medium-offset-up",
-      githubUrl: "https://cv-builder-chryschi.netlify.app ",
-      projectUrl: "https://github.com/chryschi/cv-builder",
+      githubUrl: "https://github.com/chryschi/cv-builder ",
+      projectUrl: "https://cv-builder-chryschi.netlify.app",
       projectTitle: "CV-Builder",
+      imageUrl: imgCVBuilder,
     },
     {
       classes:
@@ -34,6 +38,7 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
   ];
 
@@ -44,6 +49,7 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
     {
       classes:
@@ -51,12 +57,14 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
     {
       classes: "triangle-xs position-seven triangle-down project-triangle",
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
     {
       classes:
@@ -64,6 +72,7 @@ const Projects = () => {
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
+      imageUrl: "",
     },
   ];
 
@@ -81,6 +90,7 @@ const Projects = () => {
               githubUrl={triangle.githubUrl}
               projectUrl={triangle.projectUrl}
               title={triangle.projectTitle}
+              imgUrl={triangle.imageUrl}
             />
           ))}
         </div>
@@ -92,6 +102,7 @@ const Projects = () => {
               githubUrl={triangle.githubUrl}
               projectUrl={triangle.projectUrl}
               title={triangle.projectTitle}
+              imgUrl={triangle.imageUrl}
             />
           ))}
         </div>

@@ -6,20 +6,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url;
 }
 
-.medium-offset-up > div {
+figure {
+  position: relative;
+}
+
+figure figcaption {
+  position: absolute;
+}
+
+.medium-offset-up > figcaption {
   margin-top: 0px;
 }
 
-.medium-offset-down > div {
+.medium-offset-down > figcaption {
   margin-bottom: 80px;
 }
 
-.small-offset-up > div {
+.small-offset-up > figcaption {
   margin-top: 90px;
 }
-.small-offset-down > div {
+.small-offset-down > figcaption {
   margin-bottom: 120px;
 }
 

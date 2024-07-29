@@ -3,7 +3,13 @@ import { AppContext } from "../App";
 import "./ProjectTriangle.css";
 import { Link } from "react-router-dom";
 
-const ProjectTriangle = ({ className, githubUrl, projectUrl, title }) => {
+const ProjectTriangle = ({
+  className,
+  githubUrl,
+  projectUrl,
+  title,
+  imgUrl,
+}) => {
   const { setGrayscale } = useContext(AppContext);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -18,17 +24,20 @@ const ProjectTriangle = ({ className, githubUrl, projectUrl, title }) => {
   };
 
   return (
-    <div
+    <figure
+      className={className + (isHovered ? " remove-grayscale" : "")}
       onMouseEnter={pronounceTriangle}
       onMouseLeave={showSurrounding}
-      className={className + (isHovered ? " remove-grayscale" : "")}
     >
-      <div className={isHovered ? "" : "hidden"}>
-        <p>{title}</p>
-        <Link to={projectUrl}>Visit Project </Link>
-        <Link to={githubUrl}>Code </Link>
-      </div>
-    </div>
+      <img src={imgUrl} />
+      <figcaption>
+        <div className={isHovered ? "" : "hidden"}>
+          <p>{title}</p>
+          <Link to={projectUrl}>Visit Project </Link>
+          <Link to={githubUrl}>Code </Link>
+        </div>
+      </figcaption>
+    </figure>
   );
 };
 

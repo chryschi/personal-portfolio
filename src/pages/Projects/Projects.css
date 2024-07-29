@@ -28,7 +28,7 @@
 }
 
 .position-five {
-  top: -8rem;
+  top: -3rem;
   left: -3rem;
   background-color: orange;
   animation-delay: -1.5s;
@@ -67,14 +67,14 @@
   justify-content: center;
 }
 
-.project-row > div {
+.project-row > figure {
   animation-name: levitation;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
-.project-row > div:hover {
+.project-row > figure:hover {
   animation-play-state: paused;
 }
 
