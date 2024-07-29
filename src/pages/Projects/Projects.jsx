@@ -7,17 +7,64 @@ const Projects = () => {
   const { grayscale } = useContext(AppContext);
 
   const firstRow = [
-    "triangle-small position-one triangle-up project-triangle small-offset-up",
-    "triangle-small position-two triangle-down project-triangle small-offset-down",
-    "triangle-medium position-three triangle-up project-triangle medium-offset-up",
-    "triangle-small position-four triangle-down project-triangle small-offset-down",
+    {
+      classes:
+        "triangle-small position-one triangle-up project-triangle small-offset-up",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
+    {
+      classes:
+        "triangle-small position-two triangle-down project-triangle small-offset-down",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
+    {
+      classes:
+        "triangle-medium position-three triangle-up project-triangle medium-offset-up",
+      githubUrl: "https://cv-builder-chryschi.netlify.app ",
+      projectUrl: "https://github.com/chryschi/cv-builder",
+      projectTitle: "CV-Builder",
+    },
+    {
+      classes:
+        "triangle-small position-four triangle-down project-triangle small-offset-down",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
   ];
 
   const secondRow = [
-    "triangle-medium position-five triangle-down project-triangle medium-offset-down",
-    "triangle-small position-six triangle-up project-triangle small-offset-up",
-    "triangle-xs position-seven triangle-down project-triangle",
-    "triangle-small position-eight triangle-up project-triangle small-offset-up",
+    {
+      classes:
+        "triangle-medium position-five triangle-down project-triangle medium-offset-down",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
+    {
+      classes:
+        "triangle-small position-six triangle-up project-triangle small-offset-up",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
+    {
+      classes: "triangle-xs position-seven triangle-down project-triangle",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
+    {
+      classes:
+        "triangle-small position-eight triangle-up project-triangle small-offset-up",
+      githubUrl: "",
+      projectUrl: "",
+      projectTitle: "",
+    },
   ];
 
   return (
@@ -30,7 +77,9 @@ const Projects = () => {
           {firstRow.map((triangle, idx) => (
             <ProjectTriangle
               key={idx}
-              className={triangle + (grayscale ? " grayscale" : "")}
+              className={triangle.classes + (grayscale ? " grayscale" : "")}
+              githubUrl={triangle.githubUrl}
+              projectUrl={triangle.projectUrl}
             />
           ))}
         </div>
@@ -38,7 +87,9 @@ const Projects = () => {
           {secondRow.map((triangle, idx) => (
             <ProjectTriangle
               key={firstRow.length + idx}
-              className={triangle + (grayscale ? " grayscale" : "")}
+              className={triangle.classes + (grayscale ? " grayscale" : "")}
+              githubUrl={triangle.githubUrl}
+              projectUrl={triangle.projectUrl}
             />
           ))}
         </div>

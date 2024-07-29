@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../App";
 import "./ProjectTriangle.css";
+import { Link } from "react-router-dom";
 
-const ProjectTriangle = ({ className }) => {
+const ProjectTriangle = ({ className, githubUrl, projectUrl }) => {
   const { setGrayscale } = useContext(AppContext);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -24,8 +25,8 @@ const ProjectTriangle = ({ className }) => {
     >
       <div className={isHovered ? "" : "hidden"}>
         <p>project title </p>
-        <button>Visit Project</button>
-        <button> Code</button>
+        <Link to={projectUrl}>Visit Project </Link>
+        <Link to={githubUrl}>Code </Link>
       </div>
     </div>
   );

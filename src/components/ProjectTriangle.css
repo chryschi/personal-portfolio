@@ -22,3 +22,9 @@
 .small-offset-down > div {
   margin-bottom: 120px;
 }
+
+.project-triangle a {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
