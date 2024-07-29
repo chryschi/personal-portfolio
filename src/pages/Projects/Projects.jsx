@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { AppContext } from "../../App";
 import ProjectTriangle from "../../components/ProjectTriangle";
 import imgCVBuilder from "../../assets/projects_screenshots/cv-builder-screenshot.png";
+import imgEasyCalc from "../../assets/projects_screenshots/easy-calculator.png";
+import imgAdminDashboard from "../../assets/projects_screenshots/admin-dashboard.png";
 
 const Projects = () => {
   const { grayscale } = useContext(AppContext);
@@ -33,7 +35,7 @@ const Projects = () => {
       projectUrl: "https://cv-builder-chryschi.netlify.app",
       projectTitle: "CV-Builder",
       imageUrl: imgCVBuilder,
-      overlayColor: "rgb(255, 0, 0, 0.2)",
+      overlayColor: "rgb(255, 0, 0)",
     },
     {
       classes:
@@ -50,19 +52,19 @@ const Projects = () => {
     {
       classes:
         "triangle-medium position-five triangle-down project-triangle medium-offset-down",
-      githubUrl: "",
-      projectUrl: "",
+      githubUrl: "https://github.com/chryschi/calculator",
+      projectUrl: "https://chryschi.github.io/calculator/",
       projectTitle: "",
-      imageUrl: "",
-      overlayColor: null,
+      imageUrl: imgEasyCalc,
+      overlayColor: "rgb(0, 0, 255)",
     },
     {
       classes:
         "triangle-small position-six triangle-up project-triangle small-offset-up",
-      githubUrl: "",
-      projectUrl: "",
+      githubUrl: "https://github.com/chryschi/admin-dashboard/",
+      projectUrl: "https://chryschi.github.io/admin-dashboard/",
       projectTitle: "",
-      imageUrl: "",
+      imageUrl: imgAdminDashboard,
       overlayColor: null,
     },
     {
