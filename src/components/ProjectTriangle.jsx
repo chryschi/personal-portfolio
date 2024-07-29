@@ -9,6 +9,7 @@ const ProjectTriangle = ({
   projectUrl,
   title,
   imgUrl,
+  overlayColor,
 }) => {
   const { setGrayscale } = useContext(AppContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -30,6 +31,10 @@ const ProjectTriangle = ({
       onMouseLeave={showSurrounding}
     >
       <img src={imgUrl} />
+      <div
+        className="color-overlay"
+        style={overlayColor !== null ? { backgroundColor: overlayColor } : null}
+      ></div>
       <figcaption>
         <div className={isHovered ? "" : "hidden"}>
           <p>{title}</p>

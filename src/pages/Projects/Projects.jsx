@@ -15,6 +15,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
     {
       classes:
@@ -23,6 +24,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
     {
       classes:
@@ -31,6 +33,7 @@ const Projects = () => {
       projectUrl: "https://cv-builder-chryschi.netlify.app",
       projectTitle: "CV-Builder",
       imageUrl: imgCVBuilder,
+      overlayColor: "rgb(255, 0, 0, 0.2)",
     },
     {
       classes:
@@ -39,6 +42,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
   ];
 
@@ -50,6 +54,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
     {
       classes:
@@ -58,6 +63,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
     {
       classes: "triangle-xs position-seven triangle-down project-triangle",
@@ -65,6 +71,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
     {
       classes:
@@ -73,6 +80,7 @@ const Projects = () => {
       projectUrl: "",
       projectTitle: "",
       imageUrl: "",
+      overlayColor: null,
     },
   ];
 
@@ -91,6 +99,7 @@ const Projects = () => {
               projectUrl={triangle.projectUrl}
               title={triangle.projectTitle}
               imgUrl={triangle.imageUrl}
+              overlayColor={triangle.overlayColor}
             />
           ))}
         </div>
@@ -103,6 +112,7 @@ const Projects = () => {
               projectUrl={triangle.projectUrl}
               title={triangle.projectTitle}
               imgUrl={triangle.imageUrl}
+              overlayColor={triangle.overlayColor}
             />
           ))}
         </div>
