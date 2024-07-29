@@ -1,0 +1,17 @@
+/* header */
+.logo-container {
+  background-color: aqua;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-family: SquadaOne;
+  font-size: 4rem;
+}
+
+.logo-container p {
+  font-family: SplineSans;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}

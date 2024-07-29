@@ -1,0 +1,58 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+  right: 5em;
+}
+
+.profile-photo {
+  align-self: center;
+  background-color: burlywood;
+}
+
+.about-triangle-container {
+  height: 100%;
+}
+
+.about-triangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.about-first-triangle {
+  position: relative;
+  top: 0em;
+  background-color: greenyellow;
+}
+
+.about-first-triangle > div {
+  position: absolute;
+  top: 2.6em;
+}
+
+.about-second-triangle {
+  position: relative;
+  left: 12em;
+  bottom: 4em;
+  background-color: orangered;
+}
+
+.about-second-triangle > div {
+  position: absolute;
+  bottom: 1.2em;
+}
+
+.about-third-triangle {
+  position: relative;
+  right: 5em;
+  bottom: 6em;
+  background-color: palevioletred;
+}
+
+.about-third-triangle > div {
+  position: absolute;
+  bottom: 1em;
+}

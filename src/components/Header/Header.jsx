@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { AppContext } from "../App";
+import { AppContext } from "../../App";
+import "./Header.css";
 
 const Header = () => {
   const { grayscale } = useContext(AppContext);

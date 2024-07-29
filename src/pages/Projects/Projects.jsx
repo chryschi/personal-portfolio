@@ -1,12 +1,13 @@
-import "../App.css";
+import "./Projects.css";
 import { useContext } from "react";
-import { AppContext } from "../App";
-import ProjectTriangle from "../components/ProjectTriangle";
+import { AppContext } from "../../App";
+import ProjectTriangle from "../../components/ProjectTriangle";
 
 const Projects = () => {
   const { grayscale } = useContext(AppContext);
 
   const firstRow = [
+    "triangle-small position-one triangle-up project-triangle",
     "triangle-small position-two triangle-down project-triangle",
     "triangle-medium position-three triangle-up project-triangle",
     "triangle-small position-four triangle-down project-triangle",
