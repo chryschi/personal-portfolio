@@ -1,3 +1,24 @@
 .hidden {
   display: none;
 }
+
+.project-triangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.medium-offset-up > div {
+  margin-top: 0px;
+}
+
+.medium-offset-down > div {
+  margin-bottom: 80px;
+}
+
+.small-offset-up > div {
+  margin-top: 90px;
+}
+.small-offset-down > div {
+  margin-bottom: 120px;
+}

@@ -7,17 +7,17 @@ const Projects = () => {
   const { grayscale } = useContext(AppContext);
 
   const firstRow = [
-    "triangle-small position-one triangle-up project-triangle",
-    "triangle-small position-two triangle-down project-triangle",
-    "triangle-medium position-three triangle-up project-triangle",
-    "triangle-small position-four triangle-down project-triangle",
+    "triangle-small position-one triangle-up project-triangle small-offset-up",
+    "triangle-small position-two triangle-down project-triangle small-offset-down",
+    "triangle-medium position-three triangle-up project-triangle medium-offset-up",
+    "triangle-small position-four triangle-down project-triangle small-offset-down",
   ];
 
   const secondRow = [
-    "triangle-medium position-five triangle-down project-triangle",
-    "triangle-small position-six triangle-up project-triangle",
+    "triangle-medium position-five triangle-down project-triangle medium-offset-down",
+    "triangle-small position-six triangle-up project-triangle small-offset-up",
     "triangle-xs position-seven triangle-down project-triangle",
-    "triangle-small position-eight triangle-up project-triangle",
+    "triangle-small position-eight triangle-up project-triangle small-offset-up",
   ];
 
   return (

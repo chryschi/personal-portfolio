@@ -16,10 +16,6 @@ const ProjectTriangle = ({ className }) => {
     setIsHovered(true);
   };
 
-  // const displayButtons = () => {
-
-  // }
-
   return (
     <div
       onMouseEnter={pronounceTriangle}
@@ -27,7 +23,8 @@ const ProjectTriangle = ({ className }) => {
       className={className + (isHovered ? " remove-grayscale" : "")}
     >
       <div className={isHovered ? "" : "hidden"}>
-        <button>Live Preview</button>
+        <p>project title </p>
+        <button>Visit Project</button>
         <button> Code</button>
       </div>
     </div>
