@@ -80,6 +80,7 @@ const Projects = () => {
               className={triangle.classes + (grayscale ? " grayscale" : "")}
               githubUrl={triangle.githubUrl}
               projectUrl={triangle.projectUrl}
+              title={triangle.projectTitle}
             />
           ))}
         </div>
@@ -90,6 +91,7 @@ const Projects = () => {
               className={triangle.classes + (grayscale ? " grayscale" : "")}
               githubUrl={triangle.githubUrl}
               projectUrl={triangle.projectUrl}
+              title={triangle.projectTitle}
             />
           ))}
         </div>
