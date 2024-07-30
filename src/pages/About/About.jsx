@@ -2,21 +2,26 @@ import "./About.css";
 import portrait from "../../assets/projects_screenshots/portrait.jpg";
 import { useRef, useEffect, useState } from "react";
 
-const FadeInSection = ({ children, refFetcher }) => {
+const FadeInSection = ({ children, rootRef }) => {
   const [isVisible, setVisible] = useState(false);
 
   const domRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => setVisible(entry.isIntersecting));
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+
+          setVisible(entry.isIntersecting);
+        });
+      },
+      { root: rootRef.current }
+    );
     observer.observe(domRef.current);
-    if (isVisible) {
-      refFetcher(domRef);
-    }
+
     return () => observer.disconnect();
-  }, [refFetcher, isVisible]);
+  }, [isVisible, rootRef]);
 
   return (
     <div
@@ -31,34 +36,40 @@ const FadeInSection = ({ children, refFetcher }) => {
 };
 
 const About = () => {
-  const [focusedRef, setFocusedRef] = useState(null);
+  const rootRef = useRef(null);
+  const [translateY, setTranslateY] = useState(0);
 
-  const handleScroll = () => {
-    focusedRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const getRef = (ref) => {
-    setFocusedRef(ref);
+  const scrollDown = () => {
+    console.log(translateY);
+    if (translateY !== -960) {
+      setTranslateY((prev) => prev - 320);
+    }
   };
 
   return (
     <>
-      <div onClick={handleScroll} className="about-container">
-        <div className="about-carousel-container">
-          <FadeInSection refFetcher={getRef}>
-            <p>Hi!</p>
-            <p>
-              {"I'm Abigail,"} <br />a web developer <br />
-              in the making!
-            </p>
-          </FadeInSection>
-          <FadeInSection refFetcher={getRef}>
-            I enjoy solving problems, <br />
-            producing music and being <br />
-            creative in general.
-          </FadeInSection>
+      <div onClick={scrollDown} className="about-container">
+        <div ref={rootRef} className="about-carousel-container">
+          <div
+            className="item-wrapper"
+            style={{ transform: `translate3d(0,${translateY}px,0)` }}
+          >
+            <FadeInSection rootRef={rootRef}>
+              <p>Hi!</p>
+              <p>
+                {"I'm Abigail,"} <br />a web developer <br />
+                in the making!
+              </p>
+            </FadeInSection>
+            <FadeInSection rootRef={rootRef}>
+              I enjoy solving problems, <br />
+              producing music and being <br />
+              creative in general.
+            </FadeInSection>
+            <FadeInSection rootRef={rootRef}>3rd section</FadeInSection>
+            <FadeInSection rootRef={rootRef}>4th section</FadeInSection>
+          </div>
         </div>
-
         <img
           src={portrait}
           className="profile-photo triangle-medium triangle-down"
