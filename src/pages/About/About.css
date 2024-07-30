@@ -1,58 +1,63 @@
 .about-container {
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  width: 100%;
+  /* padding: 2rem 0; */
   position: relative;
-  right: 5em;
+  /* right: 5em; */
+  background-color: rgb(111, 70, 187);
 }
 
 .profile-photo {
+  position: relative;
+  top: -8em;
+  left: 0em;
+
   object-fit: cover;
   object-position: 50% 70%;
+}
+
+.about-carousel-container {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  top: 5em;
+  left: 3em;
+
+  font-size: 1.6rem;
+  height: 300px;
+  width: 500px;
+  background-color: aqua;
+
+  overflow: scroll;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
+  min-height: 300px;
+  width: 500px;
+  background-color: rgba(140, 0, 255, 0.432);
 }
 
 .about-triangle-container {
   height: 100%;
 }
 
-.about-triangle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.fade-in-section {
+  opacity: 0;
+  /* transform: translateY(20vh); */
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
 }
-
-.about-first-triangle {
-  position: relative;
-  top: 0em;
-  background-color: greenyellow;
-}
-
-.about-first-triangle > div {
-  position: absolute;
-  top: 2.6em;
-}
-
-.about-second-triangle {
-  position: relative;
-  left: 12em;
-  bottom: 4em;
-  background-color: orangered;
-}
-
-.about-second-triangle > div {
-  position: absolute;
-  bottom: 1.2em;
-}
-
-.about-third-triangle {
-  position: relative;
-  right: 5em;
-  bottom: 6em;
-  background-color: palevioletred;
-}
-
-.about-third-triangle > div {
-  position: absolute;
-  bottom: 1em;
+.fade-in-section.is-visible {
+  opacity: 1;
+  /* transform: none; */
+  visibility: visible;
 }
