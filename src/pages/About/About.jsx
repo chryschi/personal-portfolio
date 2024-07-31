@@ -12,8 +12,6 @@ const FadeInSection = ({ children, rootRef }) => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(entry);
-
           setVisible(entry.isIntersecting);
         });
       },
@@ -39,6 +37,7 @@ const FadeInSection = ({ children, rootRef }) => {
 const About = () => {
   const rootRef = useRef(null);
   const [translateY, setTranslateY] = useState(0);
+  const [tooltipTranslate, setTooltipTranslate] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const aboutInfo = [
@@ -47,12 +46,13 @@ const About = () => {
         <>
           <p>Hi!</p>
           <p>
-            {"I'm Abigail,"} <br />a self-taught web developer based in
+            {"I'm Abigail,"} <br />a self-taught web developer <br /> based in
             Augsburg, Germany.
             <br />
           </p>
         </>
       ),
+      label: "first-paragraph",
     },
     {
       text: (
@@ -62,6 +62,7 @@ const About = () => {
           and being creative in general.
         </>
       ),
+      label: "second-paragraph",
     },
     {
       text: (
@@ -71,21 +72,13 @@ const About = () => {
           evolved from that.
         </>
       ),
+      label: "third-paragraph",
     },
-    { text: <>Visit my projects on GitHub or contact me here.</> },
+    {
+      text: <>Visit my projects on GitHub or contact me here.</>,
+      label: "fourth-paragraph",
+    },
   ];
-
-  useEffect(() => {
-    console.log(isTransitioning);
-    console.log(translateY);
-  }, [isTransitioning, translateY]);
-
-  const scrollDown = () => {
-    console.log(translateY);
-    if (translateY !== -960) {
-      setTranslateY((prev) => prev - 320);
-    }
-  };
 
   const handleScroll = throttle((e) => {
     // logic for scrolling down
@@ -105,14 +98,43 @@ const About = () => {
     }
   }, 100);
 
+  const handleScrollbar = throttle((e) => {
+    // logic for scrolling down
+    if (tooltipTranslate < 300) {
+      if (e.deltaY > 0) {
+        setTooltipTranslate((prev) => prev + 100);
+      }
+    }
+
+    //logic for scrolling up
+    if (tooltipTranslate > 0) {
+      if (e.deltaY < 0) {
+        setTooltipTranslate((prev) => prev - 100);
+      }
+    }
+  }, 100);
+
   return (
     <>
       <div
-        onClick={scrollDown}
         onTransitionEnd={() => setIsTransitioning(false)}
-        onWheel={isTransitioning ? null : (e) => handleScroll(e)}
+        onWheel={
+          isTransitioning
+            ? null
+            : (e) => {
+                handleScroll(e);
+                handleScrollbar(e);
+              }
+        }
         className="about-container"
       >
+        <div className="about-scrollbar">
+          <div
+            className="tooltip"
+            style={{ transform: `translate3d(0,${tooltipTranslate}%,0)` }}
+          ></div>
+        </div>
+
         <div ref={rootRef} className="about-carousel-container">
           <div
             className="item-wrapper"
@@ -120,7 +142,6 @@ const About = () => {
           >
             {aboutInfo.map((info, idx) => (
               <FadeInSection key={idx} rootRef={rootRef}>
-                {" "}
                 {info.text}
               </FadeInSection>
             ))}

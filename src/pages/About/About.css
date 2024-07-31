@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -63,4 +64,18 @@
 .fade-in-section.is-visible {
   opacity: 1;
   visibility: visible;
+}
+
+.about-scrollbar {
+  position: absolute;
+  left: 0;
+
+  width: 6px;
+  height: 100%;
+}
+.about-scrollbar .tooltip {
+  background-color: red;
+  width: 100%;
+  height: 25%;
+  transition: transform 0.5s ease;
 }
