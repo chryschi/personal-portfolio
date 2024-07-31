@@ -51,8 +51,19 @@ const About = () => {
   const handleScroll = throttle((e) => {
     console.log(e);
     setIsTransitioning(true);
-    if (e.deltaY > 0) {
-      setTranslateY((prev) => prev - 320);
+
+    // logic for scrolling down
+    if (translateY > -960) {
+      if (e.deltaY > 0) {
+        setTranslateY((prev) => prev - 320);
+      }
+    }
+
+    //logic for scrolling up
+    if (translateY < 0) {
+      if (e.deltaY < 0) {
+        setTranslateY((prev) => prev + 320);
+      }
     }
   }, 100);
 
