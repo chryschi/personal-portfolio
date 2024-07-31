@@ -1,6 +1,7 @@
 import "./About.css";
 import portrait from "../../assets/projects_screenshots/portrait.jpg";
 import { useRef, useEffect, useState } from "react";
+import { throttle } from "lodash";
 
 const FadeInSection = ({ children, rootRef }) => {
   const [isVisible, setVisible] = useState(false);
@@ -38,6 +39,7 @@ const FadeInSection = ({ children, rootRef }) => {
 const About = () => {
   const rootRef = useRef(null);
   const [translateY, setTranslateY] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const scrollDown = () => {
     console.log(translateY);
@@ -46,9 +48,22 @@ const About = () => {
     }
   };
 
+  const handleScroll = throttle((e) => {
+    console.log(e);
+    setIsTransitioning(true);
+    if (e.deltaY > 0) {
+      setTranslateY((prev) => prev - 320);
+    }
+  }, 100);
+
   return (
     <>
-      <div onClick={scrollDown} className="about-container">
+      <div
+        onClick={scrollDown}
+        onTransitionEnd={() => setIsTransitioning(false)}
+        onWheel={isTransitioning ? null : (e) => handleScroll(e)}
+        className="about-container"
+      >
         <div ref={rootRef} className="about-carousel-container">
           <div
             className="item-wrapper"
