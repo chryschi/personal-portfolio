@@ -41,6 +41,40 @@ const About = () => {
   const [translateY, setTranslateY] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const aboutInfo = [
+    {
+      text: (
+        <>
+          <p>Hi!</p>
+          <p>
+            {"I'm Abigail,"} <br />a self-taught web developer based in
+            Augsburg, Germany.
+            <br />
+          </p>
+        </>
+      ),
+    },
+    {
+      text: (
+        <>
+          I enjoy solving problems, <br />
+          producing music <br />
+          and being creative in general.
+        </>
+      ),
+    },
+    {
+      text: (
+        <>
+          Studying physics guided me to coding. <br />
+          Eventually a passion for building appealing web projects from scratch
+          evolved from that.
+        </>
+      ),
+    },
+    { text: <>Visit my projects on GitHub or contact me here.</> },
+  ];
+
   useEffect(() => {
     console.log(isTransitioning);
     console.log(translateY);
@@ -84,24 +118,12 @@ const About = () => {
             className="item-wrapper"
             style={{ transform: `translate3d(0,${translateY}px,0)` }}
           >
-            <FadeInSection rootRef={rootRef}>
-              <p>Hi!</p>
-              <p>
-                {"I'm Abigail,"} <br />a self-taught web developer.
-                <br />
-              </p>
-            </FadeInSection>
-            <FadeInSection rootRef={rootRef}>
-              I enjoy solving problems, <br />
-              producing music and being <br />
-              creative in general.
-            </FadeInSection>
-            <FadeInSection rootRef={rootRef}>
-              Studying physics guided me to coding. <br />
-              Eventually a passion for building appealing web projects from
-              scratch evolved from that.
-            </FadeInSection>
-            <FadeInSection rootRef={rootRef}>4th section</FadeInSection>
+            {aboutInfo.map((info, idx) => (
+              <FadeInSection key={idx} rootRef={rootRef}>
+                {" "}
+                {info.text}
+              </FadeInSection>
+            ))}
           </div>
         </div>
         <img
