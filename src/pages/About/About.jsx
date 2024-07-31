@@ -1,33 +1,15 @@
 import "./About.css";
 import portrait from "../../assets/projects_screenshots/portrait.jpg";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { throttle } from "lodash";
+import { aboutInfo } from "./aboutInfo";
 
-const FadeInSection = ({ children, rootRef }) => {
-  const [isVisible, setVisible] = useState(false);
-
-  const domRef = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setVisible(entry.isIntersecting);
-        });
-      },
-      { root: rootRef.current }
-    );
-    observer.observe(domRef.current);
-
-    return () => observer.disconnect();
-  }, [isVisible, rootRef]);
-
+const FadeInSection = ({ children, isVisible }) => {
   return (
     <div
       className={`fade-in-section carousel-item ${
         isVisible ? "is-visible" : ""
       }`}
-      ref={domRef}
     >
       {children}
     </div>
@@ -35,80 +17,32 @@ const FadeInSection = ({ children, rootRef }) => {
 };
 
 const About = () => {
-  const rootRef = useRef(null);
   const [translateY, setTranslateY] = useState(0);
   const [tooltipTranslate, setTooltipTranslate] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeElementIdx, setActiveElementIdx] = useState(0);
 
-  const aboutInfo = [
-    {
-      text: (
-        <>
-          <p>Hi!</p>
-          <p>
-            {"I'm Abigail,"} <br />a self-taught web developer <br /> based in
-            Augsburg, Germany.
-            <br />
-          </p>
-        </>
-      ),
-      label: "first-paragraph",
-    },
-    {
-      text: (
-        <>
-          I enjoy solving problems, <br />
-          producing music <br />
-          and being creative in general.
-        </>
-      ),
-      label: "second-paragraph",
-    },
-    {
-      text: (
-        <>
-          Studying physics guided me to coding. <br />
-          Eventually a passion for building appealing web projects from scratch
-          evolved from that.
-        </>
-      ),
-      label: "third-paragraph",
-    },
-    {
-      text: <>Visit my projects on GitHub or contact me here.</>,
-      label: "fourth-paragraph",
-    },
-  ];
+  useEffect(() => {
+    setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
+  }, [activeElementIdx]);
+
+  const ELEMENT_HEIGHT = 320;
 
   const handleScroll = throttle((e) => {
     // logic for scrolling down
-    if (translateY > -960) {
+    if (activeElementIdx < 3) {
       if (e.deltaY > 0) {
         setIsTransitioning(true);
-        setTranslateY((prev) => prev - 320);
-      }
-    }
-
-    //logic for scrolling up
-    if (translateY < 0) {
-      if (e.deltaY < 0) {
-        setIsTransitioning(true);
-        setTranslateY((prev) => prev + 320);
-      }
-    }
-  }, 100);
-
-  const handleScrollbar = throttle((e) => {
-    // logic for scrolling down
-    if (tooltipTranslate < 300) {
-      if (e.deltaY > 0) {
+        setActiveElementIdx((prev) => prev + 1);
         setTooltipTranslate((prev) => prev + 100);
       }
     }
 
     //logic for scrolling up
-    if (tooltipTranslate > 0) {
+    if (activeElementIdx > 0) {
       if (e.deltaY < 0) {
+        setIsTransitioning(true);
+        setActiveElementIdx((prev) => prev - 1);
         setTooltipTranslate((prev) => prev - 100);
       }
     }
@@ -118,14 +52,7 @@ const About = () => {
     <>
       <div
         onTransitionEnd={() => setIsTransitioning(false)}
-        onWheel={
-          isTransitioning
-            ? null
-            : (e) => {
-                handleScroll(e);
-                handleScrollbar(e);
-              }
-        }
+        onWheel={isTransitioning ? null : (e) => handleScroll(e)}
         className="about-container"
       >
         <div className="about-scrollbar">
@@ -135,13 +62,16 @@ const About = () => {
           ></div>
         </div>
 
-        <div ref={rootRef} className="about-carousel-container">
+        <div className="about-carousel-container">
           <div
             className="item-wrapper"
             style={{ transform: `translate3d(0,${translateY}px,0)` }}
           >
             {aboutInfo.map((info, idx) => (
-              <FadeInSection key={idx} rootRef={rootRef}>
+              <FadeInSection
+                key={idx}
+                isVisible={idx === activeElementIdx ? true : false}
+              >
                 {info.text}
               </FadeInSection>
             ))}
