@@ -2,15 +2,22 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 import "./Header.css";
+import useViewport from "../useViewport";
 
 const Header = () => {
   const { grayscale } = useContext(AppContext);
+  const { width } = useViewport();
+  const breakpointMedium = 820;
+  const breakpointSmall = 500;
 
   return (
     <>
       <header className={grayscale ? "grayscale" : ""}>
         <div className="logo-container">
-          <div className="logo">Abigail Chrystal Major</div>
+          <div className="logo">
+            {width > breakpointSmall ? "Abigail" : "A."}{" "}
+            {width > breakpointMedium ? "Chrystal" : ""} Major
+          </div>
           <p>Web Development</p>
         </div>
       </header>

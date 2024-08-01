@@ -43,9 +43,13 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 300px;
+  /* gap: 300px; */
 
   list-style: none;
+}
+
+nav ul li {
+  flex: 1 auto;
 }
 
 nav a {
