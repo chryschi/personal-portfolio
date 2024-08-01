@@ -89,6 +89,10 @@ main {
   display: flex;
   justify-content: center;
   flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: lightblue;
 }
 
 @keyframes levitation {
@@ -104,7 +108,7 @@ main {
 }
 
 .projects-background {
-  position: absolute;
+  /* position: relative; */
   height: 100%;
   width: 100%;
   background-color: rosybrown;

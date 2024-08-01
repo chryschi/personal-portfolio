@@ -12,7 +12,7 @@ function App() {
     <>
       <AppContext.Provider value={{ grayscale, setGrayscale }}>
         <Header />
-        <main>
+        <main style={grayscale ? { backgroundColor: "grey" } : null}>
           <Outlet />
         </main>
       </AppContext.Provider>

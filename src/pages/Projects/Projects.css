@@ -1,62 +1,69 @@
 /* border width relations for equilateral triangle: border-bottom = 1.73 * border-right and border-right = border-left */
-
 .position-one {
-  top: 2rem;
-  left: 8rem;
+  /* top: 2rem;
+  left: 8rem; */
   background-color: green;
   animation-delay: -1s;
-  /* transform: scale(0.5); */
 }
 
 .position-two {
-  left: 10rem;
+  /* left: 10rem; */
   background-color: blue;
   animation-delay: -0.5s;
 }
 
 .position-three {
-  top: 5rem;
+  /* top: 5rem; */
   background-color: pink;
   animation-delay: -2s;
 }
 
 .position-four {
-  top: 2.4rem;
-  right: 9rem;
+  /* top: 2.4rem;
+  right: 9rem; */
   background-color: red;
   animation-delay: -2.5s;
 }
 
 .position-five {
-  top: -3rem;
-  left: -3rem;
+  /* top: -3rem;
+  left: -3rem; */
   background-color: orange;
   animation-delay: -1.5s;
 }
 
 .position-six {
-  top: 4rem;
-  left: -10rem;
+  /* top: 4rem;
+  left: -10rem; */
   background-color: teal;
   animation-delay: -0.5s;
 }
 
 .position-seven {
-  top: 6rem;
-  left: -7rem;
+  /* top: 6rem;
+  left: -7rem; */
   background-color: burlywood;
 }
 .position-eight {
-  left: -3rem;
+  /* left: -3rem; */
   background-color: darkmagenta;
   animation-delay: -2s;
 }
 
+.project-container {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  /* padding: 30px; */
+}
+
 .project-triangle-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 3rem;
-  /* justify-content: center; */
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   padding: 30px;
@@ -67,15 +74,113 @@
   justify-content: center;
 }
 
-.project-row > figure {
-  animation-name: levitation;
+.project-triangle-container > figure {
+  /* animation-name: levitation; */
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
-.project-row > figure:hover {
+.project-triangle-container > figure:hover {
   animation-play-state: paused;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  main {
+    background-color: green;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  main {
+    background-color: rosybrown;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  main {
+    background-color: lightblue;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main {
+    background-color: violet;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1160px) {
+  main {
+    background-color: orange;
+  }
+
+  .position-four {
+    top: 0rem;
+    /* right: 9rem; */
+    background-color: red;
+    animation-delay: -2.5s;
+  }
+}
+
+@media only screen and (min-width: 1660px) {
+  main {
+    background-color: orange;
+  }
+
+  .position-one {
+    /* top: 2rem; */
+    /* left: 8rem; */
+    background-color: green;
+    animation-delay: -1s;
+  }
+
+  .position-two {
+    /* left: 10rem; */
+    background-color: blue;
+    animation-delay: -0.5s;
+  }
+
+  .position-three {
+    /* top: 5rem; */
+    background-color: pink;
+    animation-delay: -2s;
+  }
+  .position-four {
+    top: -4rem;
+    /* right: 9rem; */
+    background-color: red;
+    animation-delay: -2.5s;
+  }
+
+  .position-five {
+    top: 1rem;
+    /* left: -3rem; */
+    background-color: orange;
+    animation-delay: -1.5s;
+  }
+
+  .position-six {
+    /* top: 4rem; */
+    /* left: -10rem; */
+    background-color: teal;
+    animation-delay: -0.5s;
+  }
+
+  .position-seven {
+    /* top: 6rem; */
+    /* left: -7rem; */
+    background-color: burlywood;
+  }
+  .position-eight {
+    /* left: -3rem; */
+    background-color: darkmagenta;
+    animation-delay: -2s;
+  }
 }
 
 /* .projects-background {

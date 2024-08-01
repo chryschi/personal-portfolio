@@ -68,7 +68,7 @@ const Projects = () => {
       overlayColor: null,
     },
     {
-      classes: "triangle-xs position-seven triangle-down project-triangle",
+      classes: "triangle-small position-seven triangle-down project-triangle",
       githubUrl: "",
       projectUrl: "",
       projectTitle: "",
@@ -88,37 +88,38 @@ const Projects = () => {
 
   return (
     <>
-      <div
+      {/* <div
         className={"projects-background" + (grayscale ? " grayscale" : "")}
-      ></div>
+      ></div> */}
       <div className="project-triangle-container">
-        <div className="project-row row-one">
-          {firstRow.map((triangle, idx) => (
-            <ProjectTriangle
-              key={idx}
-              className={triangle.classes + (grayscale ? " grayscale" : "")}
-              githubUrl={triangle.githubUrl}
-              projectUrl={triangle.projectUrl}
-              title={triangle.projectTitle}
-              imgUrl={triangle.imageUrl}
-              overlayColor={triangle.overlayColor}
-            />
-          ))}
-        </div>
-        <div className="project-row row-two">
-          {secondRow.map((triangle, idx) => (
-            <ProjectTriangle
-              key={firstRow.length + idx}
-              className={triangle.classes + (grayscale ? " grayscale" : "")}
-              githubUrl={triangle.githubUrl}
-              projectUrl={triangle.projectUrl}
-              title={triangle.projectTitle}
-              imgUrl={triangle.imageUrl}
-              overlayColor={triangle.overlayColor}
-            />
-          ))}
-        </div>
-      </div>
+        {/* <div className="project-row"> */}
+
+        {firstRow.map((triangle, idx) => (
+          <ProjectTriangle
+            key={idx}
+            className={triangle.classes + (grayscale ? " grayscale" : "")}
+            githubUrl={triangle.githubUrl}
+            projectUrl={triangle.projectUrl}
+            title={triangle.projectTitle}
+            imgUrl={triangle.imageUrl}
+            overlayColor={triangle.overlayColor}
+          />
+        ))}
+        {/* </div> */}
+        {/* <div className="project-row"> */}
+        {secondRow.map((triangle, idx) => (
+          <ProjectTriangle
+            key={firstRow.length + idx}
+            className={triangle.classes + (grayscale ? " grayscale" : "")}
+            githubUrl={triangle.githubUrl}
+            projectUrl={triangle.projectUrl}
+            title={triangle.projectTitle}
+            imgUrl={triangle.imageUrl}
+            overlayColor={triangle.overlayColor}
+          />
+        ))}
+        {/* </div> */}
+      </div>{" "}
     </>
   );
 };
