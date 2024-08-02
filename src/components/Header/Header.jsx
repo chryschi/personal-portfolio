@@ -8,15 +8,15 @@ const Header = () => {
   const { grayscale } = useContext(AppContext);
   const { width } = useViewport();
   const breakpointMedium = 820;
-  const breakpointSmall = 500;
+  const breakpointSmall = 480;
 
   return (
     <>
       <header className={grayscale ? "grayscale" : ""}>
         <div className="logo-container">
           <div className="logo">
-            {width > breakpointSmall ? "Abigail" : "A."}{" "}
-            {width > breakpointMedium ? "Chrystal" : ""} Major
+            {width > breakpointSmall ? "Abigail " : "A. "}
+            {width > breakpointMedium ? "Chrystal " : ""}Major
           </div>
           <p>Web Development</p>
         </div>

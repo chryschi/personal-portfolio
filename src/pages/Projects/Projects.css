@@ -50,16 +50,8 @@
   animation-delay: -2s;
 }
 
-.project-container {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  /* padding: 30px; */
-}
-
 .project-triangle-container {
   display: flex;
-  /* flex-direction: column; */
   flex-direction: row;
   flex-wrap: wrap;
   gap: 3rem;
@@ -69,13 +61,8 @@
   padding: 30px;
 }
 
-.project-row {
-  display: flex;
-  justify-content: center;
-}
-
 .project-triangle-container > figure {
-  /* animation-name: levitation; */
+  animation-name: levitation;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -83,6 +70,17 @@
 
 .project-triangle-container > figure:hover {
   animation-play-state: paused;
+}
+
+/* classes for small screen */
+.project-square-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+  gap: 100px;
+  box-sizing: border-box;
 }
 
 /* Extra small devices (phones, 600px and down) */

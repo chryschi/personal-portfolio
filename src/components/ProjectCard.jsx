@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../App";
-import "./ProjectTriangle.css";
+import "./ProjectCard.css";
 import { Link } from "react-router-dom";
 
-const ProjectTriangle = ({
+const ProjectCard = ({
   className,
   githubUrl,
   projectUrl,
@@ -46,4 +46,4 @@ const ProjectTriangle = ({
   );
 };
 
-export default ProjectTriangle;
+export default ProjectCard;

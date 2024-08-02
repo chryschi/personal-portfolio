@@ -6,27 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url;
 }
 
-figure {
+figure.project-triangle {
   position: relative;
 }
 
-figure figcaption {
+figure.project-triangle figcaption {
   position: absolute;
-}
-
-.color-overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0.3;
-  transition: 0.5s ease;
-}
-
-figure:hover .color-overlay {
-  opacity: 0;
 }
 
 .medium-offset-up > figcaption {
@@ -44,8 +31,34 @@ figure:hover .color-overlay {
   margin-bottom: 120px;
 }
 
-.project-triangle a {
+/* for square display */
+figure.project-square {
+  position: relative;
+  width: 100%;
+}
+figure.project-square figcaption {
+  position: absolute;
+}
+
+.project-square img {
+  width: 100%;
+}
+
+/* general style */
+figure a {
   background-color: white;
   border-radius: 10px;
   padding: 10px;
+}
+
+.color-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  transition: 0.5s ease;
+}
+
+figure:hover .color-overlay {
+  opacity: 0;
 }
