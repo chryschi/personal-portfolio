@@ -49,11 +49,14 @@ nav ul {
 }
 
 nav ul li {
+  display: flex;
+  justify-content: center;
   flex: 1 auto;
 }
 
 nav a {
   display: block;
+  width: auto;
   position: relative;
   padding: 0.2em 0;
   color: var(--nav-text-color);
