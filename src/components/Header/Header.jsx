@@ -8,7 +8,7 @@ const Header = () => {
   const { grayscale } = useContext(AppContext);
   const { width } = useViewport();
   const breakpointMedium = 820;
-  const breakpointSmall = 480;
+  const breakpointSmall = 500;
 
   return (
     <>
