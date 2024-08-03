@@ -93,11 +93,7 @@ nav a:active::after {
 /* main content */
 
 main {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  flex: 1 auto;
   width: 100%;
   background-color: lightblue;
 }
@@ -115,7 +111,6 @@ main {
 }
 
 .projects-background {
-  /* position: relative; */
   height: 100%;
   width: 100%;
   background-color: rosybrown;

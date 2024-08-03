@@ -1,51 +1,38 @@
 /* border width relations for equilateral triangle: border-bottom = 1.73 * border-right and border-right = border-left */
 .position-one {
-  /* top: 2rem;
-  left: 8rem; */
   background-color: green;
   animation-delay: -1s;
 }
 
 .position-two {
-  /* left: 10rem; */
   background-color: blue;
   animation-delay: -0.5s;
 }
 
 .position-three {
-  /* top: 5rem; */
   background-color: pink;
   animation-delay: -2s;
 }
 
 .position-four {
-  /* top: 2.4rem;
-  right: 9rem; */
   background-color: red;
   animation-delay: -2.5s;
 }
 
 .position-five {
-  /* top: -3rem;
-  left: -3rem; */
   background-color: orange;
   animation-delay: -1.5s;
 }
 
 .position-six {
-  /* top: 4rem;
-  left: -10rem; */
   background-color: teal;
   animation-delay: -0.5s;
 }
 
 .position-seven {
-  /* top: 6rem;
-  left: -7rem; */
   background-color: burlywood;
 }
 .position-eight {
-  /* left: -3rem; */
   background-color: darkmagenta;
   animation-delay: -2s;
 }
@@ -54,33 +41,37 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 3rem;
   justify-content: center;
+  gap: 3rem;
+
   box-sizing: border-box;
-  width: 100%;
   padding: 30px;
+
+  width: 100%;
+  max-width: 2300px;
+  height: 100%;
 }
 
-.project-triangle-container > figure {
+/* .project-triangle-container > figure {
   animation-name: levitation;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-}
-
+} */
+/* 
 .project-triangle-container > figure:hover {
   animation-play-state: paused;
-}
+} */
 
 /* classes for small screen */
 .project-square-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   width: 100%;
   padding: 30px;
   gap: 100px;
-  box-sizing: border-box;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -130,24 +121,6 @@
     background-color: orange;
   }
 
-  .position-one {
-    /* top: 2rem; */
-    /* left: 8rem; */
-    background-color: green;
-    animation-delay: -1s;
-  }
-
-  .position-two {
-    /* left: 10rem; */
-    background-color: blue;
-    animation-delay: -0.5s;
-  }
-
-  .position-three {
-    /* top: 5rem; */
-    background-color: pink;
-    animation-delay: -2s;
-  }
   .position-four {
     top: -4rem;
     /* right: 9rem; */
@@ -161,26 +134,20 @@
     background-color: orange;
     animation-delay: -1.5s;
   }
-
-  .position-six {
-    /* top: 4rem; */
-    /* left: -10rem; */
-    background-color: teal;
-    animation-delay: -0.5s;
-  }
-
-  .position-seven {
-    /* top: 6rem; */
-    /* left: -7rem; */
-    background-color: burlywood;
-  }
-  .position-eight {
-    /* left: -3rem; */
-    background-color: darkmagenta;
-    animation-delay: -2s;
-  }
 }
 
+@media only screen and (min-width: 2160px) {
+  main {
+    background-color: mintcream;
+  }
+
+  .position-four {
+    top: 0rem;
+    /* right: 9rem; */
+    background-color: red;
+    animation-delay: -2.5s;
+  }
+}
 /* .projects-background {
   position: absolute;
   height: 100%;

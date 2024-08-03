@@ -2,7 +2,8 @@
   display: none;
 }
 
-.project-triangle {
+.project-triangle,
+.project-square {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +36,17 @@ figure.project-triangle figcaption {
 figure.project-square {
   position: relative;
   width: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 400px;
 }
 figure.project-square figcaption {
   position: absolute;
 }
+
+/* .project-square {
+  background-color: red;
+} */
 
 .project-square img {
   width: 100%;
