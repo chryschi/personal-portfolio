@@ -76,7 +76,8 @@ const Projects = () => {
       overlayColor: null,
     },
     {
-      classes: "triangle-small position-seven triangle-down project-triangle",
+      classes:
+        "triangle-small position-seven triangle-down project-triangle small-offset-down",
       squareClasses: "project-square",
       githubUrl: "",
       projectUrl: "",

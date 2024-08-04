@@ -38,8 +38,10 @@ const ProjectCard = ({
       <figcaption>
         <div className={isHovered ? "" : "hidden"}>
           <p>{title}</p>
-          <Link to={projectUrl}>Visit Project </Link>
-          <Link to={githubUrl}>Code </Link>
+          <div>
+            <Link to={projectUrl}>Visit Project </Link>
+            <Link to={githubUrl}>Code </Link>
+          </div>
         </div>
       </figcaption>
     </figure>
