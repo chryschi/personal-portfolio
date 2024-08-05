@@ -164,11 +164,6 @@ nav,
   filter: grayscale(0%);
 }
 
-.profile-photo {
-  align-self: center;
-  background-color: burlywood;
-}
-
 .about-triangle-container {
   height: 100%;
 }

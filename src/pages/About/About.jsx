@@ -3,6 +3,7 @@ import portrait from "../../assets/projects_screenshots/portrait.jpg";
 import { useEffect, useState } from "react";
 import { throttle } from "lodash";
 import { aboutInfo } from "./aboutInfo";
+import useViewport from "../../components/useViewport";
 
 const FadeInSection = ({ children, isVisible }) => {
   return (
@@ -22,11 +23,13 @@ const About = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeElementIdx, setActiveElementIdx] = useState(0);
 
+  const ELEMENT_HEIGHT = 320;
+  const { width } = useViewport();
+  const breakpoint = 1190;
+
   useEffect(() => {
     setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
   }, [activeElementIdx]);
-
-  const ELEMENT_HEIGHT = 320;
 
   const handleScroll = throttle((e) => {
     // logic for scrolling down
@@ -53,7 +56,9 @@ const About = () => {
       <div
         onTransitionEnd={() => setIsTransitioning(false)}
         onWheel={isTransitioning ? null : (e) => handleScroll(e)}
-        className="about-container"
+        className={
+          "about-container " + (width < breakpoint ? "small-screen" : "")
+        }
       >
         <div className="about-scrollbar">
           <div
@@ -77,10 +82,7 @@ const About = () => {
             ))}
           </div>
         </div>
-        <img
-          src={portrait}
-          className="profile-photo triangle-medium triangle-down"
-        />
+        <img src={portrait} className={"profile-photo " + "profile-square"} />
       </div>
     </>
   );
