@@ -1,5 +1,5 @@
 import "./Projects.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../App";
 import ProjectCard from "../../components/ProjectCard";
 import imgCVBuilder from "../../assets/projects_screenshots/cv-builder-screenshot.png";
@@ -99,6 +99,12 @@ const Projects = () => {
 
   const { width } = useViewport();
   const breakpoint = 1016;
+
+  useEffect(() => {
+    document.body.style.backgroundColor = grayscale
+      ? "grey"
+      : "var(--background-color)";
+  }, [grayscale]);
 
   return (
     <>

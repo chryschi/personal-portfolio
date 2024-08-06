@@ -18,9 +18,8 @@
   line-height: 1.5;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--background-color);
-  --nav-text-color: black;
+  color: #685e84;
+  background-color: #ffb9b9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,15 +36,7 @@
   --second-header-color: #ffb9b9;
   --navbar-background-color: #ff8f6b;
   --navbar-color: #685e84;
-  --background-color: #ffb9b9;
 }
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-} */
 
 html,
 body {
@@ -53,7 +44,6 @@ body {
   height: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background-color: lightslategray;
 }
 
 h1 {
@@ -81,14 +71,4 @@ button {
 button:focus,
 button:focus-visible {
   outline: none;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  /* button {
-    background-color: #f9f9f9;
-  } */
 }

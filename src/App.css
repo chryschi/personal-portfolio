@@ -4,29 +4,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--logo-color);
 }
 
 * {
   margin: 0;
   padding: 0;
-}
-
-/* header */
-.logo-container {
-  background-color: aqua;
-  padding: 20px;
-  text-transform: uppercase;
-}
-
-.logo {
-  font-family: SquadaOne;
-  font-size: 4rem;
-}
-
-.logo-container p {
-  font-family: SplineSans;
-  font-size: 1.2rem;
-  letter-spacing: 0.2rem;
 }
 
 nav {
@@ -96,7 +79,7 @@ nav a:active::after {
 main {
   flex: 1 auto;
   width: 100%;
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 
 @keyframes levitation {
