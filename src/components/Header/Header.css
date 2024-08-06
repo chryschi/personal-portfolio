@@ -1,6 +1,6 @@
 /* header */
 .logo-container {
-  background-color: aqua;
+  background-color: var(--header-background-color);
   padding: 20px;
   text-transform: uppercase;
 }
@@ -8,10 +8,13 @@
 .logo {
   font-family: SquadaOne;
   font-size: 4rem;
+  text-shadow: 7px 5px 4px rgba(0, 0, 0, 0.377);
+  color: var(--logo-color);
 }
 
 .logo-container p {
   font-family: SplineSans;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
+  color: var(--second-header-color);
 }

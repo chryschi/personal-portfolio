@@ -34,7 +34,8 @@ nav {
   top: 0;
   z-index: 9;
   padding: 10px;
-  background-color: yellow;
+
+  background-color: var(--navbar-background-color);
 
   font-size: 1rem;
   text-transform: lowercase;
@@ -59,7 +60,7 @@ nav a {
   width: auto;
   position: relative;
   padding: 0.2em 0;
-  color: var(--nav-text-color);
+  color: var(--navbar-color);
   text-decoration: none;
 }
 
@@ -70,7 +71,7 @@ nav a::after {
   left: -10%;
   width: 120%;
   height: 0.1em;
-  background-color: hotpink;
+  background-color: var(--navbar-color);
   transform: scale(0);
   transform-origin: center;
   transition: transform 300ms;
@@ -215,6 +216,8 @@ nav,
   top: 5vh;
   width: calc(2 * var(--medium-triangle-size));
   height: calc(0.86 * var(--medium-triangle-width));
+
+  font-size: 1.4rem;
 }
 
 .contact {
@@ -234,17 +237,20 @@ nav,
   width: 100%;
 }
 
+.contact-triangle p {
+  margin-bottom: 20px;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 0;
-  /* background: orange; */
+
   flex: 1;
-  width: 35%;
+  width: 100%;
   border-radius: 12px;
-  /* overflow: hidden; */
 }
 
 .contact-triangle button {

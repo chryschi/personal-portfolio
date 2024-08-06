@@ -19,7 +19,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-color);
   --nav-text-color: black;
 
   font-synthesis: none;
@@ -31,6 +31,13 @@
   --small-triangle-width: 22rem;
   --medium-triangle-width: 30rem;
   --large-triangle-width: 40rem;
+
+  --header-background-color: #685e84;
+  --logo-color: #ffb9b9;
+  --second-header-color: #ffb9b9;
+  --navbar-background-color: #ff8f6b;
+  --navbar-color: #685e84;
+  --background-color: #ffb9b9;
 }
 
 /* body {
