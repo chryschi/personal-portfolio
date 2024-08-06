@@ -45,6 +45,7 @@ figure.project-square figcaption {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 /* general style */
@@ -62,6 +63,10 @@ figure a {
   transition: 0.5s ease;
 }
 
+.project-square .color-overlay {
+  border-radius: 10px;
+}
+
 figure:hover .color-overlay {
   opacity: 1;
 }
@@ -69,6 +74,7 @@ figure:hover .color-overlay {
 /* hover state (figcaption) style */
 figcaption p {
   font-size: 1.2rem;
+  color: white;
 }
 
 figcaption > div {
