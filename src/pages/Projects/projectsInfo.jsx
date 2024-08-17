@@ -1,6 +1,7 @@
 import imgCVBuilder from "../../assets/projects_screenshots/cv-builder-screenshot.png";
 import imgEasyCalc from "../../assets/projects_screenshots/easy-calculator.png";
 import imgAdminDashboard from "../../assets/projects_screenshots/admin-dashboard.png";
+import imgMpPortfolio from "../../assets/projects_screenshots/mp-portfolio.png";
 
 export const firstRow = [
   {
@@ -17,10 +18,10 @@ export const firstRow = [
     classes:
       "triangle-small position-two triangle-down project-triangle small-offset-down",
     squareClasses: "project-square",
-    githubUrl: "",
-    projectUrl: "",
-    projectTitle: "",
-    imageUrl: "",
+    githubUrl: "https://github.com/chryschi/mp-portfolio-new",
+    projectUrl: "https://mp-portfolio-preview.netlify.app/aktuelles",
+    projectTitle: "MP Portfolio Website",
+    imageUrl: imgMpPortfolio,
     overlayColor: "orange",
   },
   {
