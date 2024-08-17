@@ -3,9 +3,7 @@ const Contact = () => {
     <>
       <div className="contact-container">
         <div className="contact-triangle">
-          <p>
-            I&apos;m looking forward to <br /> your message!
-          </p>
+          <p>Don&apos;t hesitate to send me a message!</p>
           <div className="button-container">
             <button>
               <a href="mailto:abigail.c.major@web.de">Contact Me</a>
