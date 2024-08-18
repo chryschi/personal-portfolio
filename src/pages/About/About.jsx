@@ -53,7 +53,7 @@ const About = () => {
   }, [activeElementIdx, height, scrollPosition]);
 
   const handleScroll = throttle((e) => {
-    if (scrollPosition <= 1) {
+    if (scrollPosition <= 1 || document.body.clientHeight <= height) {
       // logic for scrolling down
       if (activeElementIdx < 3) {
         if (e.deltaY > 0) {
