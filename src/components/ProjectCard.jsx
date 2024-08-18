@@ -33,11 +33,14 @@ const ProjectCard = ({
       <img src={imgUrl} />
       <div
         className="color-overlay"
-        style={overlayColor !== null ? { backgroundColor: overlayColor } : null}
+        style={{
+          backgroundColor: overlayColor,
+          opacity: imgUrl === "" ? 1 : null,
+        }}
       ></div>
       <figcaption>
         <div className={isHovered ? "" : "hidden"}>
-          <p>{title}</p>
+          <p>{title === "" ? "Coming soon" : title}</p>
           <div>
             <Link to={projectUrl}>Visit Project </Link>
             <Link to={githubUrl}>Code </Link>

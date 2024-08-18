@@ -22,8 +22,9 @@ figure.project-triangle figcaption {
 }
 
 .small-offset-up > figcaption {
-  margin-top: 150px;
+  margin-top: 110px;
 }
+
 .small-offset-down > figcaption {
   margin-bottom: 120px;
 }
@@ -35,6 +36,7 @@ figure.project-square {
   height: 400px;
   min-width: 300px;
   min-height: 300px;
+  border: none;
 }
 
 figure.project-square figcaption {
@@ -42,6 +44,8 @@ figure.project-square figcaption {
 }
 
 .project-square img {
+  /* background-color: black; */
+  border: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
