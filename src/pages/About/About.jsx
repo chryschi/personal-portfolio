@@ -1,6 +1,6 @@
 import "./About.css";
 import portrait from "../../assets/projects_screenshots/portrait.jpg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { throttle } from "lodash";
 import { aboutInfo } from "./aboutInfo";
 import useViewport from "../../components/useViewport";
@@ -22,14 +22,25 @@ const About = () => {
   const [tooltipTranslate, setTooltipTranslate] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeElementIdx, setActiveElementIdx] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const textRef = useRef(null);
 
   const ELEMENT_HEIGHT = 320;
-  const { width } = useViewport();
+  const { width, height } = useViewport();
   const breakpoint = 1190;
 
   useEffect(() => {
+    const getScrollPosition = () => {
+      const position = textRef.current.getBoundingClientRect().bottom - height;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", getScrollPosition, { passive: true });
+    console.log(textRef.current.getBoundingClientRect().bottom - height);
     setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
-  }, [activeElementIdx]);
+
+    return window.removeEventListener("scroll", getScrollPosition);
+  }, [activeElementIdx, height]);
 
   const handleScroll = throttle((e) => {
     // logic for scrolling down
@@ -67,7 +78,7 @@ const About = () => {
           ></div>
         </div>
 
-        <div className="about-carousel-container">
+        <div ref={textRef} className="about-carousel-container">
           <div
             className="item-wrapper"
             style={{ transform: `translate3d(0,${translateY}px,0)` }}
