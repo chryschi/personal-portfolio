@@ -23,6 +23,7 @@ const About = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeElementIdx, setActiveElementIdx] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(10);
+  const [startTouchPosition, setStartTouchPosition] = useState();
   const textRef = useRef(null);
 
   const ELEMENT_HEIGHT = 320;
@@ -77,11 +78,48 @@ const About = () => {
     }
   }, 100);
 
+  const handleTouchStart = (e) => {
+    const firstTouchEvent = e.touches[0];
+    const location = firstTouchEvent.screenY;
+
+    console.log(e);
+    setStartTouchPosition(location);
+  };
+
+  const handleTouchEnd = (e) => {
+    const firstTouchEvent = e.changedTouches[0];
+    const locationEnd = firstTouchEvent.screenY;
+    console.log("touch end");
+    console.log(e);
+
+    if (scrollPosition <= 1 || document.body.clientHeight <= height) {
+      if (activeElementIdx > 0) {
+        if (startTouchPosition < locationEnd) {
+          console.log("scroll up");
+          setIsTransitioning(true);
+          setActiveElementIdx((prev) => prev - 1);
+          setTooltipTranslate((prev) => prev - 100);
+        }
+      }
+
+      if (activeElementIdx < 3) {
+        if (startTouchPosition > locationEnd) {
+          console.log("scroll down");
+          setIsTransitioning(true);
+          setActiveElementIdx((prev) => prev + 1);
+          setTooltipTranslate((prev) => prev + 100);
+        }
+      }
+    }
+  };
+
   return (
     <>
       <div
         onTransitionEnd={() => setIsTransitioning(false)}
         onWheel={isTransitioning ? null : (e) => handleScroll(e)}
+        onTouchStart={isTransitioning ? null : (e) => handleTouchStart(e)}
+        onTouchEnd={isTransitioning ? null : (e) => handleTouchEnd(e)}
         className={
           "about-container " + (width < breakpoint ? "small-screen" : "")
         }
