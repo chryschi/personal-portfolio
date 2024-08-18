@@ -18,6 +18,7 @@ _Visit my portfolio website [here](https://chryschi.github.io/)._
 - About page
   - Custom scrollbar
   - Fade in and out effect for paragraphs
+  - Only scroll text when it's fully visible (also for mobile)
 
 ## Used Technologies
 
@@ -31,3 +32,4 @@ This project was developed with Vite, React and HMTL/CSS/JS.
 - Optimize responsive behavior (font sizes, margins and paddings)
 - Enhance image positioning inside of triangles
 - Stop triangle animation when user preference is set accordingly
+- Prevent page refresh when scrolling up text on about page (mobile devices)

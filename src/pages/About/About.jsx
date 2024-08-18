@@ -54,7 +54,9 @@ const About = () => {
     }
 
     document.body.addEventListener("scroll", getScrollPosition);
-    document.body.addEventListener("touchmove", disablePullToRefresh);
+    document.body.addEventListener("touchmove", disablePullToRefresh, {
+      passive: false,
+    });
     console.log(textRef.current.getBoundingClientRect().bottom - height);
     setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
 
@@ -67,7 +69,7 @@ const About = () => {
   }, [activeElementIdx, height, scrollPosition, width]);
 
   const handleScroll = throttle((e) => {
-    if (scrollPosition <= 1 || document.body.clientHeight <= height) {
+    if (scrollPosition <= 1 || document.body.scrollHeight <= height) {
       // logic for scrolling down
       if (activeElementIdx < 3) {
         if (e.deltaY > 0) {
@@ -102,7 +104,7 @@ const About = () => {
     console.log("touch end");
     console.log(e);
 
-    if (scrollPosition <= 1 || document.body.clientHeight <= height) {
+    if (scrollPosition <= 1 || document.body.scrollHeight <= height) {
       if (activeElementIdx > 0) {
         if (startTouchPosition < locationEnd) {
           console.log("scroll up");
