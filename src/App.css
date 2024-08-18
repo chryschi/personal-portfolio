@@ -78,7 +78,8 @@ nav a:active::after {
 main {
   flex: 1 auto;
   width: 100%;
-  /* background-color: lightblue; */
+  transition: background-color 0.5s ease;
+  background-color: var(--background-color);
 }
 
 @keyframes levitation {
@@ -98,10 +99,6 @@ main {
   width: 100%;
   background-color: rosybrown;
 }
-
-/* body .project-row > div:not(:hover) {
-  filter: grayscale(100%);
-} */
 
 .triangle-up {
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
@@ -133,8 +130,8 @@ main {
 
 header,
 nav,
-.projects-background,
-.project-triangle {
+.project-triangle,
+.project-square {
   filter: grayscale(0%);
   transition: filter 0.5s ease;
 }
@@ -145,52 +142,6 @@ nav,
 
 .remove-grayscale {
   filter: grayscale(0%);
-}
-
-.about-triangle-container {
-  height: 100%;
-}
-
-.about-triangle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.about-first-triangle {
-  position: relative;
-  top: 0em;
-  background-color: greenyellow;
-}
-
-.about-first-triangle > div {
-  position: absolute;
-  top: 2.6em;
-}
-
-.about-second-triangle {
-  position: relative;
-  left: 12em;
-  bottom: 4em;
-  background-color: orangered;
-}
-
-.about-second-triangle > div {
-  position: absolute;
-  bottom: 1.2em;
-}
-
-.about-third-triangle {
-  position: relative;
-  right: 5em;
-  bottom: 6em;
-  background-color: palevioletred;
-}
-
-.about-third-triangle > div {
-  position: absolute;
-  bottom: 1em;
 }
 
 .contact-container {
