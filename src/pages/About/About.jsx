@@ -31,10 +31,17 @@ const About = () => {
   const breakpoint = 1190;
 
   useEffect(() => {
+    const disablePullToRefresh = (e) => {
+      if (activeElementIdx !== 0) {
+        e.preventDefault();
+      }
+    };
+
     const getScrollPosition = () => {
       const position = textRef.current.getBoundingClientRect().bottom - height;
       setScrollPosition(position);
     };
+
     if (
       (scrollPosition === 0 && width < breakpoint) ||
       scrollPosition === -100
@@ -47,11 +54,14 @@ const About = () => {
     }
 
     document.body.addEventListener("scroll", getScrollPosition);
+    document.body.addEventListener("touchmove", disablePullToRefresh);
     console.log(textRef.current.getBoundingClientRect().bottom - height);
     setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
 
     return () => {
       document.body.removeEventListener("scroll", getScrollPosition);
+      document.body.removeEventListener("touchmove", disablePullToRefresh);
+
       document.body.style.overflowY = "scroll";
     };
   }, [activeElementIdx, height, scrollPosition, width]);
