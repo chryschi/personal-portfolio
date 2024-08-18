@@ -34,7 +34,10 @@ const About = () => {
       const position = textRef.current.getBoundingClientRect().bottom - height;
       setScrollPosition(position);
     };
-    if (scrollPosition === 0) {
+    if (
+      (scrollPosition === 0 && width < breakpoint) ||
+      scrollPosition === -100
+    ) {
       document.body.style.overflowY = "hidden";
 
       if (activeElementIdx === 0) {
@@ -50,7 +53,7 @@ const About = () => {
       document.body.removeEventListener("scroll", getScrollPosition);
       document.body.style.overflowY = "scroll";
     };
-  }, [activeElementIdx, height, scrollPosition]);
+  }, [activeElementIdx, height, scrollPosition, width]);
 
   const handleScroll = throttle((e) => {
     if (scrollPosition <= 1 || document.body.clientHeight <= height) {
