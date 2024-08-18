@@ -4,18 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { throttle } from "lodash";
 import { aboutInfo } from "./aboutInfo";
 import useViewport from "../../components/useViewport";
-
-const FadeInSection = ({ children, isVisible }) => {
-  return (
-    <div
-      className={`fade-in-section carousel-item ${
-        isVisible ? "is-visible" : ""
-      }`}
-    >
-      {children}
-    </div>
-  );
-};
+import FadeInSection from "./FadeInSection";
 
 const About = () => {
   const [translateY, setTranslateY] = useState(0);
@@ -57,7 +46,6 @@ const About = () => {
     document.body.addEventListener("touchmove", disablePullToRefresh, {
       passive: false,
     });
-    console.log(textRef.current.getBoundingClientRect().bottom - height);
     setTranslateY(activeElementIdx * -ELEMENT_HEIGHT);
 
     return () => {
@@ -94,29 +82,26 @@ const About = () => {
     const firstTouchEvent = e.touches[0];
     const location = firstTouchEvent.screenY;
 
-    console.log(e);
     setStartTouchPosition(location);
   };
 
   const handleTouchEnd = (e) => {
     const firstTouchEvent = e.changedTouches[0];
     const locationEnd = firstTouchEvent.screenY;
-    console.log("touch end");
-    console.log(e);
 
     if (scrollPosition <= 1 || document.body.scrollHeight <= height) {
+      //logic for scrolling up
       if (activeElementIdx > 0) {
         if (startTouchPosition < locationEnd) {
-          console.log("scroll up");
           setIsTransitioning(true);
           setActiveElementIdx((prev) => prev - 1);
           setTooltipTranslate((prev) => prev - 100);
         }
       }
 
+      //logic for scrolling down
       if (activeElementIdx < 3) {
         if (startTouchPosition > locationEnd) {
-          console.log("scroll down");
           setIsTransitioning(true);
           setActiveElementIdx((prev) => prev + 1);
           setTooltipTranslate((prev) => prev + 100);
