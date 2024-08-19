@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const aboutInfo = [
   {
     text: (
@@ -33,7 +35,13 @@ export const aboutInfo = [
     label: "third-paragraph",
   },
   {
-    text: <>Visit my projects on GitHub or contact me here.</>,
+    text: (
+      <>
+        Visit my projects on{" "}
+        <Link to="https://github.com/chryschi">GitHub </Link>or contact me
+        <Link to="/contact">here</Link>.
+      </>
+    ),
     label: "fourth-paragraph",
   },
 ];

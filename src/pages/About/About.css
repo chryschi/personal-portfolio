@@ -68,8 +68,38 @@
   transition: opacity 0.3s ease-out;
   will-change: opacity;
 }
+
 .fade-in-section.is-visible {
   opacity: 1;
+}
+
+.fade-in-section a {
+  position: relative;
+  color: var(--link-color);
+}
+
+.fade-in-section a::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  background-color: var(--link-color);
+}
+
+.fade-in-section a::after {
+  content: "";
+  position: absolute;
+  top: 1.2em;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  transform: scale(0);
+  background-color: var(--link-color);
+  transform-origin: center;
+  transition: transform 300ms;
+}
+
+.fade-in-section a:hover::after {
+  transform: scale(1);
 }
 
 .about-scrollbar {
