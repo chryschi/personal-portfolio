@@ -42,8 +42,12 @@ const ProjectCard = ({
         <div className={isHovered ? "" : "hidden"}>
           <p>{title === "" ? "Coming soon" : title}</p>
           <div>
-            <Link to={projectUrl}>Visit Project </Link>
-            <Link to={githubUrl}>Code </Link>
+            <Link target={"_blank"} to={projectUrl}>
+              Visit Project{" "}
+            </Link>
+            <Link target={"_blank"} to={githubUrl}>
+              Code{" "}
+            </Link>
           </div>
         </div>
       </figcaption>

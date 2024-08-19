@@ -38,7 +38,10 @@ export const aboutInfo = [
     text: (
       <>
         Visit my projects on{" "}
-        <Link to="https://github.com/chryschi">GitHub </Link>or contact me
+        <Link target={"_blank"} to="https://github.com/chryschi">
+          GitHub{" "}
+        </Link>
+        or contact me
         <Link to="/contact">here</Link>.
       </>
     ),
