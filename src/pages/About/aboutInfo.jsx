@@ -42,7 +42,7 @@ export const aboutInfo = [
           GitHub{" "}
         </Link>
         or contact me
-        <Link to="/contact">here</Link>.
+        <Link to="/contact">here.</Link>
       </>
     ),
     label: "fourth-paragraph",

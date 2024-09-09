@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-_Visit my portfolio website [here](https://chryschi.github.io/)._
+_Visit my portfolio website [here](https://www.abigailmajor.com/)._
 
 ## Features
 
